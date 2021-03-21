@@ -13,15 +13,16 @@ def readAchievementFiles():
         if (entry.path.endswith(".json") and entry.is_file()):
             with open(entry.path, 'r') as file:
                 data = file.read()
-                fileContents.append({ 'data': data, 'name': file.name })
+                fileContents.append({ 'data': data })
 
     return fileContents
 
 def fileContentToIndexable(fileContent):
     # parse file
+    data_from_json = json.loads(fileContent['data'])
     data = {
-        **json.loads(fileContent['data']),
-        'objectID': fileContent['id']
+        **data_from_json,
+        'objectID': data_from_json['id']
     }
 
     return data
