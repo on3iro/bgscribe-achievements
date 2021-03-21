@@ -19,10 +19,9 @@ def readAchievementFiles():
 
 def fileContentToIndexable(fileContent):
     # parse file
-    name = os.path.splitext(os.path.basename(fileContent['name']))[0]
     data = {
         **json.loads(fileContent['data']),
-        'objectID': name
+        'objectID': fileContent['id']
     }
 
     return data
