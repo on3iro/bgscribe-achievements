@@ -2,6 +2,8 @@ import os
 import json
 from algoliasearch.search_client import SearchClient
 
+APPLICATION_ID = '0AUXOSEYK3'
+
 def readAchievementFiles():
     directory = r'./achievementSets'
 
@@ -31,7 +33,7 @@ def mapFileContentsToIndexable(fileContents: list):
 def main():
     print('Indexing files...')
 
-    client = SearchClient.create('0AUXOSEYK3', os.environ['ADMIN_API_KEY'])
+    client = SearchClient.create(APPLICATION_ID, os.environ['ADMIN_API_KEY'])
     index = client.init_index('dev_BGScribe_Achievements')
 
     indexableFileData = mapFileContentsToIndexable(readAchievementFiles())

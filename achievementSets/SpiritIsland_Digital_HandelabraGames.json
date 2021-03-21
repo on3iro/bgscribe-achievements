@@ -32,13 +32,13 @@
       "type": { "type": "regular" },
       "title": "Vigor",
       "description": "Win a game with a difficulty rating of 4 or higher",
-      "level": "bronce"
+      "level": "bronze"
     },
     {
       "type": { "type": "regular" },
       "title": "European Repulsion",
       "description": "Defeat all core game adversaries",
-      "level": "bronce"
+      "level": "bronze"
     },
     {
       "type": { "type": "regular" },
